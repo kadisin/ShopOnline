@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using System.Xml.Linq;
 
 namespace ShopOnline.Repository.Generics
 {
-    public abstract class Repository<T> : IRepository<T> where T : class
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
 
         protected DbContext _context;
@@ -14,53 +15,66 @@ namespace ShopOnline.Repository.Generics
             _context = context;
         }
 
-        public virtual async Task<int> AddElement(T element)
+        public virtual async Task<TEntity> Add(TEntity entity)
         {
-            await _context.Set<T>().AddAsync(element);
-            return await _context.SaveChangesAsync();
+            if(entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+
+            await _context.Set<TEntity>().AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public virtual async Task<int> DeleteElement(T element)
+        public virtual async Task<TEntity> Delete(TEntity entity)
         {
-            var isElementExis = await _context.Set<T>().FindAsync(element);
+            var isElementExis = await _context.Set<TEntity>().FindAsync(entity);
             if (isElementExis != null)
             {
-                _context.Set<T>().Remove(element);
-                return await _context.SaveChangesAsync();
+                _context.Set<TEntity>().Remove(entity);
+                await _context.SaveChangesAsync();
+                return entity;
             }
             else
             {
-                throw new ArgumentException($"{nameof(T)} can't be found!");
+                throw new ArgumentException(nameof(TEntity));
             }
         }
 
-        public virtual async Task<IEnumerable<T>> GetAll()
+        public virtual async Task<IEnumerable<TEntity>> GetAll()
         {
-            return await _context.Set<T>().AsNoTracking().ToListAsync();
+            return await _context.Set<TEntity>().AsNoTracking().ToListAsync();
         }
 
-        public virtual async Task<T> GetElementByKey(int id)
+        public virtual async Task<TEntity> GetById(Guid id)
         {
-            var element = await _context.Set<T>().FindAsync(id);
+            var element = await _context.Set<TEntity>().FindAsync(id);
             if (element != null)
             {
                 return element;
             }
             else
             {
-                throw new ArgumentException($"Can't find {nameof(T)}");
+                throw new ArgumentException(nameof(TEntity));
             }
         }
 
-        public virtual async Task<IEnumerable<T>> GetElementsWithFilter(Expression<Func<T, bool>> predicate)
+        public virtual async Task<IEnumerable<TEntity>> GetWithFilter(Expression<Func<TEntity, bool>> predicate)
         {
-            return await _context.Set<T>().AsQueryable().Where(predicate).ToListAsync();
+            return await _context.Set<TEntity>().AsQueryable().Where(predicate).ToListAsync();
         }
 
-        public virtual async Task<int> UpdateElement(T element)
+        public virtual async Task<TEntity> Update(TEntity entity)
         {
-            _context.Set<T>().Update(element);
-            return await _context.SaveChangesAsync();
+            if(entity == null)
+            {
+                throw new ArgumentException(nameof(entity));
+            }
+
+            _context.Set<TEntity>().Update(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
     }
 }

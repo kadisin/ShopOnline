@@ -24,6 +24,14 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<ShopOnlineDbContext>();
+    DbInitializer.Seed(context);
+}
+
 app.UseStaticFiles();
 
 app.UseRouting();

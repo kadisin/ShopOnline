@@ -19,7 +19,7 @@ namespace ShopOnline.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var orders = await _orderRepository.GetElementsWithFilter(order => order.OrderDate > DateTime.UtcNow.AddDays(-5));
+            var orders = await _orderRepository.GetWithFilter(order => order.OrderDate > DateTime.UtcNow.AddDays(-5));
             return View(orders);
         }
 
@@ -62,7 +62,7 @@ namespace ShopOnline.Controllers
                 Customer = customer
             };
 
-            await _orderRepository.AddElement(order);
+            await _orderRepository.Add(order);
             return Ok("Order created");
         }
 

@@ -10,18 +10,18 @@ namespace ShopOnline.Repository
         { 
         }
 
-        public override Task<int> UpdateElement(Customer element)
+        public override Task<Customer> Update(Customer entity)
         {
-            var customer = _context.Set<Customer>().FirstOrDefault(x => x.CustomerId == element.CustomerId);
+            var customer = _context.Set<Customer>().FirstOrDefault(x => x.CustomerId == entity.CustomerId);
             if (customer != null)
             {
-                customer.Name = element.Name;
-                customer.City = element.City;
-                customer.PostalCode = element.PostalCode;
-                customer.ShippingAddress = element.ShippingAddress;
-                customer.Country = element.Country;
+                customer.Name = entity.Name;
+                customer.City = entity.City;
+                customer.PostalCode = entity.PostalCode;
+                customer.ShippingAddress = entity.ShippingAddress;
+                customer.Country = entity.Country;
 
-                return base.UpdateElement(customer);
+                return base.Update(customer);
             }
             else
             {

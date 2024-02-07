@@ -9,5 +9,9 @@
         public virtual Order Order { get; set; }
         public Guid OrderId { get; set; }
         
+        public LineItem()
+        {
+            LineItemId = Guid.NewGuid();
+        }
     }
 }

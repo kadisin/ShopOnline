@@ -8,5 +8,10 @@
         public Guid CustomerId { get; set; }
         public DateTime OrderDate { get; set; }
         public decimal OrderTotal => LineItems.Sum(item => item.Product.Price * item.Quantity);
+
+        public Order()
+        {
+            OrderId = Guid.NewGuid();
+        }
     }
 }

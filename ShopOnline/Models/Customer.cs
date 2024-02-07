@@ -9,5 +9,10 @@
         public string PostalCode { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
 
+        public Customer()
+        {
+            CustomerId = Guid.NewGuid();
+        }
+
     }
 }

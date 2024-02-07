@@ -13,7 +13,7 @@ namespace ShopOnline.Controllers
             _customerRepository = customerRepository;
         }
 
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index(Guid? id)
         {
             if(id == null)
             {
@@ -22,7 +22,7 @@ namespace ShopOnline.Controllers
             }
             else
             {
-                var customer = _customerRepository.GetElementByKey(id.Value);
+                var customer = _customerRepository.GetById(id.Value);
                 return View(new[] { customer });
             }
         }

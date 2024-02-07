@@ -8,16 +8,16 @@ namespace ShopOnline.Repository
     {
         public ProductRepository(ShopOnlineDbContext context) : base(context) { }
 
-        public override Task<int> UpdateElement(Product element)
+        public override Task<Product> Update(Product entity)
         {
-            var product = _context.Set<Product>().FirstOrDefault(x => x.ProductId == element.ProductId);
+            var product = _context.Set<Product>().FirstOrDefault(x => x.ProductId == entity.ProductId);
 
             if (product != null) 
             { 
-                product.Name = element.Name;
-                product.Price = element.Price;
+                product.Name = entity.Name;
+                product.Price = entity.Price;
 
-                return base.UpdateElement(product);
+                return base.Update(product);
             }
             else
             {

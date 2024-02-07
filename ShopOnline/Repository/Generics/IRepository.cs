@@ -2,48 +2,48 @@
 
 namespace ShopOnline.Repository.Generics
 {
-    // Abstract repository working on T element
-    public interface IRepository<T>
+    // Abstract repository working on TEntity entity
+    public interface IRepository<TEntity>
     {
         /// <summary>
         /// Get all elements from database
         /// </summary>
         /// <returns>List of elements</returns>
-        public Task<IEnumerable<T>> GetAll();
+        public Task<IEnumerable<TEntity>> GetAll();
 
         /// <summary>
         /// Get elements that equals filter function
         /// </summary>
         /// <param name="predicate">Predicate (filter function)</param>
         /// <returns>IQueryable of elements - because we want to filter data on database</returns>
-        public Task<IEnumerable<T>> GetElementsWithFilter(Expression<Func<T, bool>> predicate);
+        public Task<IEnumerable<TEntity>> GetWithFilter(Expression<Func<TEntity, bool>> predicate);
 
         /// <summary>
         /// Get element by key
         /// </summary>
-        /// <param name="key">Unique key of element</param>
+        /// <param name="id">Unique id of entity</param>
         /// <returns>Element T</returns>
-        public Task<T> GetElementByKey(int id);
+        public Task<TEntity> GetById(Guid id);
 
         /// <summary>
-        /// Add element to database
+        /// Add entity to database
         /// </summary>
-        /// <param name="element">Element to add to database</param>
-        /// <returns></returns>
-        public Task<int> AddElement(T element);
+        /// <param name="entity">Entity to add to database</param>
+        /// <returns>Entity</returns>
+        public Task<TEntity> Add(TEntity entity);
 
         /// <summary>
-        /// Update existing element
+        /// Update existing entity
         /// </summary>
-        /// <param name="element">Existing in database element</param>
-        /// <returns></returns>
-        public Task<int> UpdateElement(T element);
+        /// <param name="entity">Existing in database entity</param>
+        /// <returns>Entity</returns>
+        public Task<TEntity> Update(TEntity entity);
 
         /// <summary>
-        /// Delete element from database
+        /// Delete entity from database
         /// </summary>
-        /// <param name="key">Key of existing element</param>
-        /// <returns></returns>
-        public Task<int> DeleteElement(T element);
+        /// <param name="entity">Entity to be deleted</param>
+        /// <returns>Entity</returns>
+        public Task<TEntity> Delete(TEntity entity);
     }
 }
