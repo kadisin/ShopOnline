@@ -15,7 +15,8 @@
 <p> Model-View-Controller </p>
 <p> Code first design (Entity Framework) </p>
 
-![Untitled (2)](https://github.com/kadisin/ShopOnline/assets/38622355/1ff471db-6515-409e-84a8-938271951e26)
+![Untitled (3)](https://github.com/kadisin/ShopOnline/assets/38622355/a837a2bc-f1fd-48bc-b79f-3edc8387541e)
+
 
 </body>
 </html>
