@@ -14,14 +14,14 @@
     
 <hr>
 <h3>Project Information</h3>
-<p>Web project using template ASP.NET Core Web App (Model-View-Controller) - use C#, .NET Framework 6.0, Entity Framework 7.0.15</p>
-<p>Basic frontend included Razor and covered by unit tests</p>
-<p>From business perspective it's project to manage customers and bikes</p>
-<p>Customer can have more bikes (or zero), bike have to have owner</p>
-<p>Project prepared to be scalable</p>
-<p>Generic class Repository implements basic operations on database</p>
-<p>Unit Of Work Pattern implement repository managers</p>
-<p>Code first design</p>
+<li>Web project using template ASP.NET Core Web App (Model-View-Controller) - use C#, .NET Framework 6.0, Entity Framework 7.0.15</li>
+<li>Basic frontend included Razor and covered by unit tests</li>
+<li>From business perspective it's project to manage customers and bikes</li>
+<li>Customer can have more bikes (or zero), bike have to have owner</li>
+<li>Project prepared to be scalable</li>
+<li>Generic class Repository implements basic operations on database</li>
+<li>Unit Of Work Pattern implement repository managers</li>
+<li>Code first design - Entity Framework </li>
 <hr>
     
 <h3>View from user perspective - View of all bikes</h3>
