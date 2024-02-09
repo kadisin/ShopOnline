@@ -16,6 +16,7 @@
 <p> Code first design (Entity Framework) </p>
 
 <h3>Class diagram</h3>
+
 ![classdiagram](https://github.com/kadisin/ShopOnline/assets/38622355/4737ec02-bea6-405e-b87c-e289da1da40c)
 
 
