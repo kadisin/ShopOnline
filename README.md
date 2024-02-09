@@ -5,7 +5,16 @@
 <body style="margin: auto; text-align: center;">
     
 <h3>Shop online</h3>
+<p />
 
+![image](https://github.com/kadisin/ShopOnline/assets/38622355/33ff0596-4208-49fa-8570-451a1de5d682)
+
+<p />
+
+![image](https://github.com/kadisin/ShopOnline/assets/38622355/dbd1cbf9-0fd2-4e84-85c6-987297fb730c)
+
+
+<p />
 <p> Application created and focused on using good practises and patterns on backend side.</p>
 <p />
 <li> Abstraction </li>
