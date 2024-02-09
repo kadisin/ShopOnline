@@ -8,7 +8,7 @@
 <p />
 <h3>Paragraphs</h3>
 <li>View from users prespective</li>
-<li>Class diagram</li>
+<li>Class diagram (focused on backend)</li>
 <li>Project specification</li>
 
     
