@@ -1,30 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShopOnline.Repository.Generics;
 using ShopOnline.Models;
+using ShopOnline.UnitOfWork;
+using ShopOnline.Services;
 
 namespace ShopOnline.Controllers
 {
     public class CustomerController : Controller
     {
-        private readonly IRepository<Customer> _customerRepository;
+        private readonly ICustomerService _customerService;
 
-        public CustomerController(IRepository<Customer> customerRepository)
+        public CustomerController(ICustomerService customerService)
         {
-            _customerRepository = customerRepository;
+            _customerService = customerService;
         }
 
-        public async Task<IActionResult> Index(Guid? id)
+        public async Task<IActionResult> Index()
         {
-            if(id == null)
-            {
-                var customers = _customerRepository.GetAll();
-                return View(customers);
-            }
-            else
-            {
-                var customer = _customerRepository.GetById(id.Value);
-                return View(new[] { customer });
-            }
+            var customers = await _customerService.GetAllAsync();
+            return View(customers);
         }
     }
 }

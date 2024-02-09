@@ -9,6 +9,9 @@
         public string PostalCode { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
 
+        public ICollection<Bike> Bikes { get; set; }
+
+
         public Customer()
         {
             CustomerId = Guid.NewGuid();

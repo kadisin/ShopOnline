@@ -3,6 +3,8 @@ using ShopOnline.Database;
 using ShopOnline.Repository;
 using ShopOnline.Repository.Generics;
 using ShopOnline.Models;
+using ShopOnline.UnitOfWork;
+using ShopOnline.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +14,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ShopOnlineDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ShopOnlineConnectionString")));
 
 //register services
-builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
-builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
 builder.Services.AddScoped<IRepository<Customer>, CustomerRepository>();
+builder.Services.AddScoped<IRepository<Bike>,BikeRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IBikeService, BikeService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 
 var app = builder.Build();

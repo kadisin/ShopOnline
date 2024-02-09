@@ -20,18 +20,8 @@ namespace ShopOnline.Database
                 context.AddRange(customers);
             }
 
-            var products = new Product[]
-            {
-                new Product { Name = "Buty", Price = 10 },
-                new Product { Name = "Parasol", Price = 250 },
-                new Product { Name = "Kubek", Price = 30 },
-                new Product { Name = "Dlugopis", Price = 110 },
-                new Product { Name = "Klawiatura", Price = 19 },
-            };
-           // if (!context.Set<Product>().Any()) 
-            ////{ 
-                context.AddRange(products);
-            //}
+           
+
         }
 
     }

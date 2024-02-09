@@ -1,6 +1,7 @@
 ﻿using ShopOnline.Database;
 using ShopOnline.Repository.Generics;
 using ShopOnline.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ShopOnline.Repository
 {
@@ -10,9 +11,9 @@ namespace ShopOnline.Repository
         { 
         }
 
-        public override Task<Customer> Update(Customer entity)
+        public override async Task<Customer> Update(Customer entity)
         {
-            var customer = _context.Set<Customer>().FirstOrDefault(x => x.CustomerId == entity.CustomerId);
+            var customer = await _context.Set<Customer>().FirstOrDefaultAsync(x => x.CustomerId == entity.CustomerId);
             if (customer != null)
             {
                 customer.Name = entity.Name;
@@ -21,7 +22,7 @@ namespace ShopOnline.Repository
                 customer.ShippingAddress = entity.ShippingAddress;
                 customer.Country = entity.Country;
 
-                return base.Update(customer);
+                return await base.Update(customer);
             }
             else
             {

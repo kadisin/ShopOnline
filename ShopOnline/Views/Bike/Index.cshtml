@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Bike>
+<h2>Bikes</h2>
+<hr />
+
+@if (TempData["BikeDeleted"] != null)
+{
+    <p class="text-success">@TempData["PieDeleted"]</p>
+}
+
+@if (!Model.Any())
+{
+    <p>No results</p>
+}
+else
+{
+    <table class="table table-condensed table-bordered">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Owner
+            </th>
+            <th>Actions</th>
+        </tr>
+        @foreach(var bike in Model)
+        {
+            <tr>
+                <td>@bike.BikeId</td>
+                <td>@bike.Name</td>
+                <td>@bike.Description</td>
+                <td>@bike.Customer.Name</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@bike.BikeId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@bike.BikeId">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Add">Add New Bike</a>
+</p>

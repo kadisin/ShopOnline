@@ -20,4 +20,8 @@
     <ProjectReference Include="..\ShopOnline\ShopOnline.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ControllerTests\" />
+  </ItemGroup>
+
 </Project>

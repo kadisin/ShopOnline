@@ -1,0 +1,38 @@
+﻿@model ShopOnline.ViewModels.AddBikeViewModel
+
+<h2>Create a new bike</h2>
+<hr />
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <p class="text-danger">@ViewData["ErrorMessage"]</p>
+}
+
+
+<form method="post" asp-controller="Bike" asp-action="Add">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Bike.Name" class="form-label"></label>
+        <input asp-for="Bike.Name" class="form-control" />
+        <span asp-validation-for="Bike.Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Bike.Description" class="form-label"></label>
+        <input asp-for="Bike.Description" class="form-control" />
+        <span asp-validation-for="Bike.Description" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Customers" class="form-label"></label>
+        <select asp-for="Bike.CustomerId" asp-items="Model.Customers"></select>
+        <span asp-validation-for="Customers" class="text-danger"></span>
+    </div>
+
+
+    <input type="submit" value="Add bike" class="btn btn-primary" />
+</form>
+<div>
+    <a asp-controller="Bike" asp-action="Index">Back to overview</a>
+</div>
