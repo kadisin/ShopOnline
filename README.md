@@ -7,10 +7,11 @@
 <h2>Shop online</h2>
 <p />
 <h3>View from user perspective - View of all bikes</h3>
-<hr>
+<div class="image" style="border-style: solid">
 
 ![image](https://github.com/kadisin/ShopOnline/assets/38622355/33ff0596-4208-49fa-8570-451a1de5d682)
 
+</div>
 <hr>
 <p />
 <h2>View from user perspective - Add a new bike</h2>
