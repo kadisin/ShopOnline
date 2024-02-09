@@ -5,12 +5,13 @@
 <body style="margin: auto; text-align: center;">
     
 <h2>Shop online</h2>
+<hr>
 <p />
 <h3>Paragraphs</h3>
 <li>Basic informations about project</li>
 <li>View from users prespective</li>
+<li>Used patterns</li>
 <li>Class diagram (focused on backend)</li>
-<li>Project specification</li>
 
 <h3>Project Information</h3>
 <p>Web project using template ASP.NET Core Web App (Model-View-Controller) - use C#, .NET Framework 6.0, Entity Framework 7.0.15</p>
