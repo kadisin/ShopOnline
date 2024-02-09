@@ -4,18 +4,21 @@
 </head>
 <body style="margin: auto; text-align: center;">
     
-<h3>Shop online</h3>
+<h2>Shop online</h2>
 <p />
-<h2>View from user perspective - View of all bikes</h2>
+<h3>View from user perspective - View of all bikes</h3>
+<hr>
 
 ![image](https://github.com/kadisin/ShopOnline/assets/38622355/33ff0596-4208-49fa-8570-451a1de5d682)
 
+<hr>
 <p />
 <h2>View from user perspective - Add a new bike</h2>
-
+<hr>
+    
 ![image](https://github.com/kadisin/ShopOnline/assets/38622355/dbd1cbf9-0fd2-4e84-85c6-987297fb730c)
 
-
+<hr>
 <p />
 <p> Application created and focused on using good practises and patterns on backend side.</p>
 <p />
