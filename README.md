@@ -6,14 +6,14 @@
     
 <h3>Shop online</h3>
 
-<p> Application created and focused on using good practises and patterns on backend side</p>
-
-<p> Abstraction </p>
-<p> Generic Repository Pattern </p>
-<p> Dependency Injection </p>
-<p> Unit of Work Pattern </p>
-<p> Model-View-Controller </p>
-<p> Code first design (Entity Framework) </p>
+<p> Application created and focused on using good practises and patterns on backend side.</p>
+<p />
+<li> Abstraction </li>
+<li> Generic Repository Pattern </li>
+<li> Dependency Injection </li>
+<li> Unit of Work Pattern </li>
+<li> Model-View-Controller </li>
+<li> Code first design (Entity Framework) </li>
 
 <h3>Class diagram</h3>
 
