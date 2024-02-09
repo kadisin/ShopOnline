@@ -10,7 +10,7 @@
 <li>Basic informations about project</li>
 <li>View from users prespective</li>
 <li>Used patterns</li>
-<li>Class diagram (focused on backend)</li>
+<li>Class diagram</li>
     
 <hr>
 <h3>Project Information</h3>
