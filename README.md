@@ -6,10 +6,12 @@
     
 <h3>Shop online</h3>
 <p />
+<h2>View from user perspective - View of all bikes</h2>
 
 ![image](https://github.com/kadisin/ShopOnline/assets/38622355/33ff0596-4208-49fa-8570-451a1de5d682)
 
 <p />
+<h2>View from user perspective - Add a new bike</h2>
 
 ![image](https://github.com/kadisin/ShopOnline/assets/38622355/dbd1cbf9-0fd2-4e84-85c6-987297fb730c)
 
