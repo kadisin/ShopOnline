@@ -15,8 +15,8 @@
 <p> Model-View-Controller </p>
 <p> Code first design (Entity Framework) </p>
 
-![classdiagram](https://github.com/kadisin/ShopOnline/assets/38622355/824abec0-c9f7-487a-89db-bebe2f9fc697)
-
+<h3>Class diagram</h3>
+![classdiagram](https://github.com/kadisin/ShopOnline/assets/38622355/4737ec02-bea6-405e-b87c-e289da1da40c)
 
 
 
