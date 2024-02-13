@@ -19,7 +19,7 @@
 <li>Asynchronous programming</li>
 <li>Code covered by unit tests</li>
 <li>From business perspective it's project to manage customers and bikes</li>
-<li>Customer can have more bikes (or zero), bike have to have owner</li>
+<li>Customer could have 0 or more bikes, bike have to have owner</li>
 <li>Project prepared to be scalable</li>
 <li>Generic class Repository implements basic operations on database</li>
 <li>Unit Of Work Pattern implement repository managers</li>
