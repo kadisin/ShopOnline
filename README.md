@@ -7,10 +7,24 @@
 <h2>Shop online</h2>
 <p />
 <h3>Paragraphs</h3>
+<li>Basic informations about project</li>
 <li>View from users prespective</li>
-<li>Class diagram (focused on backend)</li>
-<li>Project specification</li>
-
+<li>Used patterns</li>
+<li>Class diagram</li>
+    
+<hr>
+<h3>Project Information</h3>
+<li>Web project using template ASP.NET Core Web App (Model-View-Controller) - use C#, .NET Framework 6.0, Entity Framework 7.0.15</li>
+<li>Basic frontend using Razor</li>
+<li>Asynchronous programming</li>
+<li>Code covered by unit tests</li>
+<li>From business perspective it's project to manage customers and bikes</li>
+<li>Customer could have 0 or more bikes, bike have to have owner</li>
+<li>Project prepared to be scalable</li>
+<li>Generic class Repository implements basic operations on database</li>
+<li>Unit Of Work Pattern implement repository managers</li>
+<li>Code first design - Entity Framework </li>
+<hr>
     
 <h3>View from user perspective - View of all bikes</h3>
 
