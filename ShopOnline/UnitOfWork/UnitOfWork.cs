@@ -16,6 +16,11 @@ namespace ShopOnline.UnitOfWork
             _reposiories = new Dictionary<Type, object>();
         }
 
+        /*
+         * As we can see when we implement Unit of Work patter then we have to change Repository to not abstract class
+         * we need to have sometimes object Repository (when TEntity is not defined before type)
+         * To think is good idea to implement that or not (or implement that pattern better)
+         */
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class
         {
             if(_reposiories.ContainsKey(typeof(TEntity)))
